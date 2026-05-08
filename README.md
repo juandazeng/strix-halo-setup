@@ -5,7 +5,8 @@ Unified Memory Config - BIOS Setup
 Go to the Advanced tab
 Select GFX Configuration
 Under iGPU Configuration, change UMA Size from Auto to UMA_SPECIFIED
-Set to 2GB (depends on monitor resolution)
+Set to between 512MB to 2GB (depends on monitor resolution)
+Save and exit
 
 Unified Memory Config - Linux
 ------------------------------
@@ -15,9 +16,14 @@ where 94 is the desired GB of unified memory
 Next, type these commands:
 sudo grubby --update-kernel=ALL --args='ttm.pages_limit=24064000'
 sudo grubby --update-kernel=ALL --args='amd_iommu=off'
-sudo grubby --update-kernel=ALL --args='amdgpu.cwsr_enable=0'
 sudo grubby --update-kernel=ALL --args='zswap.enabled=0'
 sudo reboot
+
+Additional arguments:
+sudo grubby --update-kernel=ALL --args='amdgpu.cwsr_enable=0'
+Refer to https://github.com/ROCm/ROCm/issues/5590
+sudo grubby --update-kernel=ALL --args='amd_iommu=off'
+Refer to https://github.com/geerlingguy/beowulf-ai-cluster/issues/5
 
 To verify, tyoe sudo dmesg | grep "amdgpu.*memory" 
 
