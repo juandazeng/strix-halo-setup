@@ -29,7 +29,10 @@
   sudo grubby --update-kernel=ALL --args='amd_iommu=off'
   ```
 
-To verify, tyoe sudo dmesg | grep "amdgpu.*memory" 
+* To verify, type:
+  ```
+  sudo dmesg | grep "amdgpu.*memory"
+  ```
 
 ## Simple LVM config to fill / to 100% (no separate /home, etc)
   ```
