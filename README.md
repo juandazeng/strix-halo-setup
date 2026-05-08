@@ -1,6 +1,6 @@
 # Strix Halo on headless Fedora 44
 
-Unified Memory Config - BIOS Setup
+## Unified Memory Config - BIOS Setup
 ------------------------------
 * Go to the Advanced tab
 * Select GFX Configuration
@@ -8,7 +8,7 @@ Unified Memory Config - BIOS Setup
 * Set to between 512MB to 2GB (depends on monitor resolution)
 * Save and exit
 
-Unified Memory Config - Linux
+## Unified Memory Config - Linux
 ------------------------------
 * Calculate the number of pages: `(94 * 1024 * 1024) / 4.096 = 24064000`
   where `94` is the desired GB of unified memory
