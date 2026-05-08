@@ -2,11 +2,11 @@
 
 Unified Memory Config - BIOS Setup
 ------------------------------
-Go to the Advanced tab
-Select GFX Configuration
-Under iGPU Configuration, change UMA Size from Auto to UMA_SPECIFIED
-Set to between 512MB to 2GB (depends on monitor resolution)
-Save and exit
+* Go to the Advanced tab
+* Select GFX Configuration
+* Under iGPU Configuration, change UMA Size from Auto to UMA_SPECIFIED
+* Set to between 512MB to 2GB (depends on monitor resolution)
+* Save and exit
 
 Unified Memory Config - Linux
 ------------------------------
