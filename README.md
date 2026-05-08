@@ -56,6 +56,7 @@
   sudo dnf install rocminfo
   # This next command is required for Stable Diffusion
   sudo dnf install hipblas
+  sudo dnf install libatomic
   ```
 * Reboot
   ```
