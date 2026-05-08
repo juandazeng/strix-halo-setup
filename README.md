@@ -55,8 +55,8 @@
   sudo dnf install rocm-hip rocm-core rocm-smi
   sudo dnf install rocminfo
   # This next command is required for Stable Diffusion
-  sudo dnf install hipblas
-  sudo dnf install libatomic
+  # If using toolbox, install this within the toolbox
+  sudo dnf install hipblas libatomic
   ```
 * Reboot
   ```
