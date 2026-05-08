@@ -54,6 +54,8 @@
   ```
   sudo dnf install rocm-hip rocm-core rocm-smi
   sudo dnf install rocminfo
+  # This next command is required for Stable Diffusion
+  sudo dnf install hipblas
   ```
 * Reboot
   ```
@@ -66,3 +68,5 @@
   # Or to see GPU usage:
   rocm-smi
   ```
+
+## Install
