@@ -9,6 +9,7 @@
 
 ## Unified Memory Config - Linux
 * Calculate the number of pages: `(94 * 1024 * 1024) / 4.096 = 24064000`
+
   where `94` is the desired GB of unified memory
 
 * Next, type these commands:
