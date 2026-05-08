@@ -53,3 +53,10 @@ sudo dnf install rocm-hip rocm-core rocm-smi
 ```
 sudo reboot
 ```
+* Verify that the drivers are installed
+  ```
+  vulkaninfo --summary
+  rocminfo
+  # Or to see GPU usage:
+  rocm-smi
+  ```
