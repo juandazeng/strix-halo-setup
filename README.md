@@ -50,9 +50,10 @@
   ```
   sudo dnf install vulkan-amdgpu-libs mesa-vulkan-drivers
   ```
-* Install Vulkan driver
+* Install ROCM driver
   ```
   sudo dnf install rocm-hip rocm-core rocm-smi
+  sudo dnf install rocminfo
   ```
 * Reboot
   ```
