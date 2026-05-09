@@ -134,4 +134,21 @@ b. Linux Setup (Fedora)
 ## C. ComfyUI
   Source and credit: https://github.com/kyuz0/amd-strix-halo-comfyui-toolboxes
 
-### 1. 
+### 1. Create comfyui Toolbox
+  Follow instructions by kyuz0 above.
+  ~~~
+  toolbox create comfyui \
+    --image docker.io/kyuz0/amd-strix-halo-comfyui:latest \
+    -- \
+    --device /dev/kfd \
+    --device /dev/dri \
+    --group-add video \
+    --group-add render \
+    --security-opt seccomp=unconfined
+  ~~~
+
+### 2. Start ComfyUI
+  By default, it listens to localhost only. Use the following command to listen on any IP
+  ```
+  cd /opt/ComfyUI && python main.py --listen 0.0.0.0 --port 8000 --output-directory $HOME/comfy-outputs --disable-mmap --gpu-only --disable-smart-memory --cache-none --bf16-vae
+  ```
