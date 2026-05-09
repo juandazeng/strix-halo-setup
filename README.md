@@ -76,9 +76,11 @@ b. Linux Setup (Fedora)
   rocm-smi
   ```
 
-### 4. Install Toolbox
+### 4. Install Podman and Toolbox
 * Toolbox is useful for isolating changes outside of the main OS
   ```
+  sudo dnf install podman
+  sudo dnf install podman-compose
   sudo dnf install toolbox
   ```
 
