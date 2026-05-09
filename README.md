@@ -35,7 +35,7 @@ b. Linux Setup (Fedora)
   sudo grubby --update-kernel=ALL --args='amd_iommu=off'
   ```
 
-* To verify, type:
+* To verify, type
   ```
   sudo dmesg | grep "amdgpu.*memory"
   ```
@@ -46,7 +46,7 @@ b. Linux Setup (Fedora)
   sudo lvextend -l +100%FREE /dev/fedora/root
   sudo xfs_growfs /
   ```
-* To verify, type:
+* To verify, type
   ```
   df -h /
   ```
