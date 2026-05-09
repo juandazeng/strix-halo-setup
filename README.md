@@ -1,6 +1,6 @@
 # Strix Halo on headless Fedora 44
 
-Tested on GMKtec EVO-X2 96GB
+Tested on GMKtec EVO-X2 96GB.
 
 ## 1. Unified Memory Config
 a. BIOS Setup
