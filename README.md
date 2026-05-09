@@ -2,7 +2,8 @@
 
 Tested on GMKtec EVO-X2 96GB.
 
-## 1. Unified Memory Config
+## A. BIOS/OS Level Setup
+### 1. Unified Memory Config
 a. BIOS Setup
 * Go to the Advanced tab
 * Select GFX Configuration
@@ -39,14 +40,14 @@ b. Linux Setup (Fedora)
   sudo dmesg | grep "amdgpu.*memory"
   ```
 
-## 2. Simple LVM config to fill / to 100% (no separate /home, etc)
+### 2. Simple LVM config to fill / to 100% (no separate /home, etc)
   ```
   sudo lvextend -l +100%FREE /dev/fedora/root
   sudo xfs_growfs /
   To verify, type df -h /
   ```
 
-## 3. Install Vulkan and ROCM Drivers
+### 3. Install Vulkan and ROCM Drivers
 * Ensure the user has permissions to access the GPU for compute workloads
   ```
   sudo usermod -a -G render,video $LOGNAME
@@ -75,12 +76,15 @@ b. Linux Setup (Fedora)
   rocm-smi
   ```
 
-## 4. Install Toolbox
+### 4. Install Toolbox
+* Toolbox is useful for isolating changes outside of the main OS
   ```
   sudo dnf install toolbox
   ```
 
-## 5. Run lemonade-server with Podman
+## B. Lemonade Server
+### 1. x
+### 2. Run lemonade-server with Podman
   This is a lot simpler than running it inside a toolbox.
   ```
   podman run --rm \
