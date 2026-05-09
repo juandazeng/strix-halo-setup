@@ -65,7 +65,7 @@ b. Linux Setup (Fedora)
   ```
   Notes:
   - 8000 = ComfyUI
-  - 9090 = Cockpit
+  - 9090 = Cockpit (already enabled in the previous step; added here for completeness)
   - 13305 = Lemonade Server
 
 ### 4. [Optional] Simple LVM config to fill / to 100% (no separate /home, etc)
@@ -117,8 +117,7 @@ b. Linux Setup (Fedora)
   ```
 
 ## B. Lemonade Server
-### 1. x
-### 2. Run lemonade-server with Podman
+### 1. Run lemonade-server with Podman
   This is a lot simpler than running it inside a toolbox.
   ```
   podman run --rm \
@@ -131,3 +130,8 @@ b. Linux Setup (Fedora)
     --security-opt label=disable \
     ghcr.io/lemonade-sdk/lemonade-server:latest
   ```
+
+## C. ComfyUI
+  Source and credit: https://github.com/kyuz0/amd-strix-halo-comfyui-toolboxes
+
+### 1. 
