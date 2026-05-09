@@ -94,8 +94,8 @@ b. Linux Setup (Fedora)
     --device /dev/kfd \
     --device /dev/dri \
     -p 13305:13305 \
-    -v ~/.cache/lemonade:/root/.cache/lemonade:Z \
-    -v ~/.cache/huggingface:/root/.cache/huggingface:Z \
+    -v ~/.cache/lemonade:/root/.cache/lemonade \
+    -v ~/.cache/huggingface:/root/.cache/huggingface \
     --security-opt label=disable \
     ghcr.io/lemonade-sdk/lemonade-server:latest
   ```
