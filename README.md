@@ -40,7 +40,35 @@ b. Linux Setup (Fedora)
   sudo dmesg | grep "amdgpu.*memory"
   ```
 
-### 2. [Optional] Simple LVM config to fill / to 100% (no separate /home, etc)
+### 2. Enable Cockpit
+* Install and enable Cockpit immediately
+  ```
+  sudo dnf install cockpit
+  sudo systemctl enable --now cockpit.socket
+  ```
+
+* Open the firewall port (9090)
+  ```
+  sudo firewall-cmd --add-service=cockpit --permanent
+  sudo firewall-cmd --reload
+  ```
+
+* Cockpit should be accessible from
+  ```
+  https://<IP>:9090
+  ```
+
+### 3. Open Firewall Ports For Services
+* Do this to make the various services accessible from other devices in the network:
+  ```
+  sudo firewall-cmd --permanent --add-port={8000,9090,13305}/tcp
+  ```
+  Notes:
+  - 8000 = ComfyUI
+  - 9090 = Cockpit
+  - 13305 = Lemonade Server
+
+### 4. [Optional] Simple LVM config to fill / to 100% (no separate /home, etc)
 * Do this if you just want a simple root volume
   ```
   sudo lvextend -l +100%FREE /dev/fedora/root
@@ -51,7 +79,7 @@ b. Linux Setup (Fedora)
   df -h /
   ```
 
-### 3. Install Vulkan and ROCM Drivers
+### 5. Install Vulkan and ROCM Drivers
 * Ensure the user has permissions to access the GPU for compute workloads
   ```
   sudo usermod -a -G render,video $LOGNAME
@@ -80,7 +108,7 @@ b. Linux Setup (Fedora)
   rocm-smi
   ```
 
-### 4. Install Podman and Toolbox
+### 6. Install Podman and Toolbox
 * Toolbox is useful for isolating changes outside of the main OS
   ```
   sudo dnf install podman
