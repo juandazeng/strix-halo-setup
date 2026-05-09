@@ -35,16 +35,20 @@ b. Linux Setup (Fedora)
   sudo grubby --update-kernel=ALL --args='amd_iommu=off'
   ```
 
-* To verify, type:
+* To verify, type
   ```
   sudo dmesg | grep "amdgpu.*memory"
   ```
 
-### 2. Simple LVM config to fill / to 100% (no separate /home, etc)
+### 2. [Optional] Simple LVM config to fill / to 100% (no separate /home, etc)
+* Do this if you just want a simple root volume
   ```
   sudo lvextend -l +100%FREE /dev/fedora/root
   sudo xfs_growfs /
-  To verify, type df -h /
+  ```
+* To verify, type
+  ```
+  df -h /
   ```
 
 ### 3. Install Vulkan and ROCM Drivers
