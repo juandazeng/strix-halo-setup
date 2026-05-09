@@ -79,3 +79,17 @@ b. Linux Setup (Fedora)
   ```
   sudo dnf install toolbox
   ```
+
+## 5. Run lemonade-server with Podman
+  This is a lot simpler than running it inside a toolbox.
+  ```
+  podman run --rm \
+    --name lemonade-server \
+    --device /dev/kfd \
+    --device /dev/dri \
+    -p 13305:13305 \
+    -v ~/.cache/lemonade:/root/.cache/lemonade:Z \
+    -v ~/.cache/huggingface:/root/.cache/huggingface:Z \
+    --security-opt label=disable \
+    ghcr.io/lemonade-sdk/lemonade-server:latest
+  ```
