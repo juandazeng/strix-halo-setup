@@ -194,3 +194,14 @@ b. Linux Setup (Fedora)
   # Once CMake has been successfully configured, build the project
   cmake --build . --config Release -j$(nproc)
   ```
+### 5. [Optional] Symlink
+  Instead of using `sudo cmake --install .` to install the binaries and libraries, we will simply create symlinks because we will likely rebuild frequently.
+  ```
+  # Create the local bin directory if it doesn't exist
+  cd
+  mkdir -p .local/bin
+
+  # Symlink the generated binaries
+  ln -s ~/llama.cpp/build/bin/llama-cli ~/.local/bin/llama-cli
+  ln -s ~/llama.cpp/build/bin/llama-server ~/.local/bin/llama-server
+  ```
