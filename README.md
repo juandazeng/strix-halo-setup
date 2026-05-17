@@ -161,8 +161,11 @@ b. Linux Setup (Fedora)
   toolbox enter llama.cpp
   ```
 ### 2. Install dependencies
-  We need Vulkan driver and libraries
+  We need CMake, Vulkan driver, libraries and other dependencies
   ```
+  # CMake, gcc, make
+  sudo dnf install cmake gcc-c++ make
+
   # Vulkan driver
   sudo dnf install mesa-vulkan-drivers mesa-vulkan-drivers.i686 vulkan-tools vulkan-loader vulkan-loader.i686
 
