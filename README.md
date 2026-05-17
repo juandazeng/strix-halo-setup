@@ -203,5 +203,6 @@ b. Linux Setup (Fedora)
 
   # Symlink the generated binaries
   ln -s ~/llama.cpp/build/bin/llama-cli ~/.local/bin/llama-cli
+  ln -s ~/llama.cpp/build/bin/llama-bench ~/.local/bin/llama-bench
   ln -s ~/llama.cpp/build/bin/llama-server ~/.local/bin/llama-server
   ```
