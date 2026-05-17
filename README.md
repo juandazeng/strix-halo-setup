@@ -152,3 +152,42 @@ b. Linux Setup (Fedora)
   ```
   cd /opt/ComfyUI && python main.py --listen 0.0.0.0 --port 8000 --output-directory $HOME/comfy-outputs --disable-mmap --gpu-only --disable-smart-memory --cache-none --bf16-vae
   ```
+
+## D. Building llama.cpp from source (for Vulkan)
+### 1. Create toolbox
+  Build and run llama.cpp inside a toolbox.
+  ```
+  toolbox create llama.cpp
+  toolbox enter llama.cpp
+  ```
+### 2. Install dependencies
+  We need Vulkan driver and libraries
+  ```
+  # Vulkan driver
+  sudo dnf install mesa-vulkan-drivers mesa-vulkan-drivers.i686 vulkan-tools vulkan-loader vulkan-loader.i686
+
+  # Vulkan development packages and shader compiler
+  sudo dnf install vulkan-headers vulkan-loader-devel glslc
+
+  # SPIR-V Headers
+  sudo dnf install spirv-headers-devel
+
+  ```
+### 3. Git clone llama.cpp and prepare for build
+  ```
+  git clone https://github.com/ggml-org/llama.cpp
+  cd llama.cpp
+  mkdir build
+  cd build  
+  ```
+### 4. Build
+  ```
+  # If this is a rebuild, remove old cache
+  rm -f CMakeCache.txt
+
+  # CMake configuration
+  cmake .. -DGGML_VULKAN=ON
+
+  # Once CMake has been successfully configured, build the project
+  cmake --build . --config Release -j$(nproc)
+  ```
