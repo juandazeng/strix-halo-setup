@@ -61,10 +61,11 @@ b. Linux Setup (Fedora)
 ### 3. Open Firewall Ports For Services
 * Do this to make the various services accessible from other devices in the network:
   ```
-  sudo firewall-cmd --permanent --add-port={8000,9090,13305}/tcp
+  sudo firewall-cmd --permanent --add-port={8000,8080,9090,13305}/tcp
   ```
   Notes:
   - 8000 = ComfyUI
+  - 8080 = llama.cpp web UI
   - 9090 = Cockpit (already enabled in the previous step; added here for completeness)
   - 13305 = Lemonade Server
 
