@@ -86,7 +86,7 @@ b. Linux Setup (Fedora)
   ```
 * Install Vulkan driver
   ```
-  sudo dnf install vulkan-amdgpu-libs mesa-vulkan-drivers
+  sudo dnf install mesa-vulkan-drivers mesa-vulkan-drivers.i686 vulkan-tools vulkan-loader vulkan-loader.i686
   ```
 * Install ROCM driver
   ```
