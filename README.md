@@ -69,7 +69,15 @@ b. Linux Setup (Fedora)
   - 9090 = Cockpit (already enabled in the previous step; added here for completeness)
   - 13305 = Lemonade Server
 
-### 4. [Optional] Simple LVM config to fill / to 100% (no separate /home, etc)
+### 4. Optional Fedora-Related Setup
+## Sudoer - so you don't need to enter password for sudo
+  ```
+  sudo nano /etc/sudoers.d/$USER
+
+  # Enter this into the editor
+  your-user-name  ALL=(ALL) NOPASSWD: ALL
+  ```
+## Simple LVM config to fill / to 100% (no separate /home, etc)
 * Do this if you just want a simple root volume
   ```
   sudo lvextend -l +100%FREE /dev/fedora/root
